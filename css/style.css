@@ -50,6 +50,13 @@ body {
     text-align: center;
     width: 100%; /* Ensure the text does not overflow */
     word-wrap: break-word; /* Prevent word overflow */
+    white-space: nowrap;
+}
+
+@media (max-width: 600px) {
+  .glow-text {
+    font-size: 4rem; /* Adjust font size for smaller screens */
+  }
 }
 
 /* Keyframes for Color Changing Effect */

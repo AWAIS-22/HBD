@@ -53,12 +53,6 @@ body {
     white-space: nowrap;
 }
 
-@media (max-width: 600px) {
-  .glow-text {
-    font-size: 4rem; /* Adjust font size for smaller screens */
-  }
-}
-
 /* Keyframes for Color Changing Effect */
 @keyframes gradientMove {
     0% {

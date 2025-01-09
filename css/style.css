@@ -69,6 +69,8 @@ body {
     margin-top: -20px; /* Moves "HAPPY BIRTHDAY!" up */
     margin-bottom: 50px; /* Adds space between "HAPPY BIRTHDAY!" and "Dear Ali" */
     font-size: 8rem; /* Default font size for large screens */
+     white-space: normal; /* Allow wrapping for HAPPY BIRTHDAY */
+  word-break: break-word; /* Break long words if needed */
 }
 
 .glow-text:last-of-type {
@@ -187,3 +189,12 @@ canvas {
 
 
 
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  .glow-text:first-of-type {
+    font-size: 4rem; /* Smaller font for HAPPY BIRTHDAY */
+  }
+  .glow-text:last-of-type {
+    font-size: 4rem; /* Smaller font for MEHBOOB */
+  }
+}

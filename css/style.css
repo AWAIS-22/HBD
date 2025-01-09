@@ -188,13 +188,3 @@ canvas {
 
 
 
-
-/* Responsive Design for Smaller Screens */
-@media (max-width: 600px) {
-  .glow-text:first-of-type {
-    font-size: 4rem; /* Smaller font for HAPPY BIRTHDAY */
-  }
-  .glow-text:last-of-type {
-    font-size: 4rem; /* Smaller font for MEHBOOB */
-  }
-}

@@ -1,0 +1,343 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  #particles-js {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure particles stay in the background */
+  }
+  
+  .birthdayCard {
+    position: relative;
+    width: 250px;
+    height: 350px;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transform: perspective(2500px);
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    /* Center the card */
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%) perspective(2500px);
+    margin-top: 50px;
+    opacity: 0;
+  }
+  
+  .birthdayCard:hover {
+    transform: translate(-50%, -50%) perspective(2500px);
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2), 0 10px 100px rgba(0, 0, 0, 0.5);
+  }
+  
+  .birthdayCard:hover .cardFront {
+    transform: rotateY(-160deg);
+  }
+  
+  .birthdayCard:hover .happy {
+    visibility: hidden;
+  }
+
+  .birthdayCard.open {
+    opacity: 1; /* Show the card when the class is added */
+}
+  
+  .cardFront {
+    position: relative;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    overflow: hidden;
+    transform-origin: left;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2),
+      30px 0 50px rgba(0, 0, 0, 0.4);
+    transition: 0.6s;
+  }
+  
+  .happy {
+    font-family: Tahoma, sans-serif;
+    text-align: center;
+    margin: 30px;
+    background-image: linear-gradient(120deg, #ffd856 0%, #f98c6e 100%);
+    transition: 0.1s;
+  }
+  
+  .balloons {
+    position: absolute;
+  }
+  
+  .balloon-1,
+  .balloon-2,
+  .balloon-3,
+  .balloon-4 {
+    position: absolute;
+    width: 85px;
+    height: 95px;
+    border-radius: 50%;
+  }
+  
+  .balloon-1 {
+    background-color: rgba(255, 40, 90, 0.7);
+    left: -10px;
+    top: 50px;
+  }
+  
+  .balloon-2 {
+    background-color: rgba(9, 215, 160, 0.7);
+    left: 50px;
+    top: 20px;
+  }
+  
+  .balloon-3 {
+    background-color: rgba(255, 186, 26, 0.7);
+    left: 110px;
+    top: 50px;
+  }
+  
+  .balloon-4 {
+    background-color: rgba(12, 122, 159, 0.7);
+    left: 170px;
+    top: 50px;
+  }
+  
+  .balloon-1::before,
+  .balloon-2::before,
+  .balloon-3::before,
+  .balloon-4::before {
+    content: "";
+    position: absolute;
+    width: 1px;
+    height: 155px;
+    background-color: #ffc848;
+    top: 95px;
+    left: 43px;
+  }
+  
+  .balloon-1::after,
+  .balloon-2::after,
+  .balloon-3::after,
+  .balloon-4::after {
+    content: "";
+    position: absolute;
+    border-right: 7px solid transparent;
+    border-left: 7px solid transparent;
+    top: 94px;
+    left: 37px;
+  }
+  
+  .balloon-1::after {
+    border-bottom: 10px solid #ff3e6b;
+  }
+  
+  .balloon-2::after {
+    border-bottom: 10px solid #04b183;
+  }
+  
+  .balloon-3::after {
+    border-bottom: 10px solid #ffc94c;
+  }
+  
+  .balloon-4::after {
+    border-bottom: 10px solid #13a9bd;
+  }
+  
+  .cardInside {
+    position: absolute;
+    background-color: #fff;
+    width: 250px;
+    height: 350px;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    box-shadow: inset 100px 20px 100px rgba(0, 0, 0, 0.2);
+  }
+  
+  p {
+    font-family: 'Dancing Script', cursive;
+    margin: 40px;
+    color: black;
+  }
+  
+  .name {
+    position: absolute;
+    left: 150px;
+    top: 200px;
+    color: #333;
+  }
+  
+  .back {
+    font-family: Tahoma, sans-serif;
+    color: green;
+    text-align: center;
+    margin: 30px;
+    outline-color: red;
+    outline-style: dotted;
+  }
+
+body {
+  animation: slideIn 0.99s ease-out forwards;
+}
+
+@keyframes slideIn {
+  from {
+      transform: translateX(-100%);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+
+.content {
+  padding: 50px;
+  text-align: center;
+}
+
+.text-container {
+  position: absolute;
+  top: 5rem; /* Default for PC */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+
+.text-container p {
+  margin: 0;
+  background: #ffd700; /* Golden background */
+  padding: 5px 15px;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+  font-family: 'Dancing Script', cursive;
+  font-weight: bolder;
+  color: black;
+  font-size: 1.2rem;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  margin: 8px auto;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid rgb(126, 3, 3); /* Arrow color */
+}
+
+/* Large Devices (PC) */
+@media (min-width: 769px) {
+  .text-container {
+    top: 3rem; /* Keep this higher for PC */
+  }
+}
+
+/* Medium Devices (Tablets, etc.) */
+@media (max-width: 768px) {
+  .text-container {
+    top: 8rem; /* Adjust top position for medium screens */
+    margin-top: 3rem;
+  }
+
+  .text-container p {
+    padding: 5px 10px;
+    font-size: 1rem;
+  }
+
+  .arrow {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgb(126, 3, 3);
+  }
+}
+
+/* Small Devices (Phones) */
+@media (max-width: 480px) {
+  .text-container {
+    top: 10rem; /* Place the container lower for small screens */
+    margin-top: 2rem;
+  }
+
+  .text-container p {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+
+  .arrow {
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid rgb(126, 3, 3);
+  }
+}
+
+
+.dear {
+  color: rgb(2, 2, 109);
+}
+
+button{
+  height: 55px;
+  width: 160px;
+  border-radius: 90px;
+  cursor: pointer;
+  background-color: black;
+  color: #ffd700;
+  margin-left: -1610px;
+  margin-top: 550px;
+  font-family: 'Playfair Display', serif;
+  font-weight: bold;
+  border: 2px solid black;
+}
+
+button:hover {
+  background-color: yellow;
+  color: black;
+  transition: 0.3s ease-in-out;
+}
+
+
+.custom-button {
+  position: absolute;
+  margin-left: 180px;
+  margin-top: 600px;
+  transform: translate(-50%, -50%);
+  background-color: black;
+  color: #ffd700;
+  border: 2px solid black;
+  border-radius: 50px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1; /* Ensure button appears above the canvas */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.custom-button:hover {
+  background-color: #ffd700;
+  transform: translate(-50%, -50%) scale(1.1);
+}

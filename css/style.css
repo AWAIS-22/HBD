@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
+/* General Styles */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Ensures padding and border don't cause overflow */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    flex-direction: column; /* Align elements vertically */
+    padding: 0 20px; /* Ensures padding for all screens */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure the body width doesn't exceed the screen */
+}
+
+/* Gradient Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Glowing Text with Smooth Color Change */
+.glow-text {
+    font-size: 6rem; /* Increased font size */
+    margin: 20px 0; /* Proper spacing */
+    font-family: 'Dancing Script', cursive;
+    font-weight: 900;
+    color: #ff7eb3; /* Initial color */
+    text-transform: uppercase;
+    animation: colorCycle 6s infinite alternate; /* Smoothly cycles colors */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* X-offset, Y-offset, blur-radius, color */
+    -webkit-text-stroke: 2px #000000; /* Outline width and color */
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes the gradient visible */
+    animation: gradientMove 3s infinite; /* 3s animation that loops infinitely */
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffcc70);
+    background-size: 300%; /* Makes animation smoother */
+    border-radius: 10px;
+    text-align: center;
+    width: 100%; /* Ensure the text does not overflow */
+    word-wrap: break-word; /* Prevent word overflow */
+}
+
+/* Keyframes for Color Changing Effect */
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.glow-text:first-of-type {
+    margin-top: -20px; /* Moves "HAPPY BIRTHDAY!" up */
+    margin-bottom: 50px; /* Adds space between "HAPPY BIRTHDAY!" and "Dear Ali" */
+    font-size: 8rem; /* Default font size for large screens */
+}
+
+.glow-text:last-of-type {
+    padding: 15px 30px; /* Increase padding for more space around the text */
+    background: linear-gradient(90deg, #ff7eb3, #ff758c, #ffcc70); /* Same gradient */
+    border-radius: 10px;
+    text-align: center;
+    width: fit-content;
+    max-width: 80%;
+    margin: 20px auto; /* Centers and adds spacing from top */
+    font-size: 6rem; /* Default font size for large screens */
+}
+
+/* Responsive font sizes for smaller screens */
+@media (max-width: 1024px) {
+    .glow-text:first-of-type {
+        font-size: 6rem; /* Smaller font size for tablets */
+    }
+
+    .glow-text:last-of-type {
+        font-size: 4.5rem; /* Smaller font size for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .glow-text:first-of-type {
+        font-size: 5rem; /* Smaller font size for medium devices like large phones */
+    }
+
+    .glow-text:last-of-type {
+        font-size: 4rem; /* Smaller font size for medium devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .glow-text:first-of-type {
+        font-size: 3.5rem; /* Font size for smaller phones */
+    }
+
+    .glow-text:last-of-type {
+        font-size: 3rem; /* Font size for smaller phones */
+    }
+
+    body {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+}
+
+
+/* Particle Styles */
+#particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    max-width: 100%; /* Prevents overflow */
+}
+
+/* Confetti Canvas */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    max-width: 100%; /* Ensures the canvas fits the viewport */
+}
+
+/* Responsive Design for Different Devices */
+@media (max-width: 1440px) {
+    .glow-text {
+        font-size: 5rem; /* Slightly smaller font for large laptops */
+    }
+}
+
+@media (max-width: 1024px) {
+    .glow-text {
+        font-size: 4.5rem; /* Adjust font size for smaller laptops/tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .glow-text {
+        font-size: 3.5rem; /* Adjusted for tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .glow-text {
+        font-size: 3rem; /* Font size for phones */
+    }
+    body {
+        padding: 20px;
+    }
+}

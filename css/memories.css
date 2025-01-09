@@ -1,0 +1,155 @@
+/* Body Styling */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Particles Container */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2; /* Particles stay behind all content */
+    pointer-events: none;
+}
+
+/* Confetti Canvas */
+#confetti-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Confetti stays behind particles */
+    pointer-events: none;
+}
+
+.container {
+    position: relative;
+    z-index: 1; /* Content remains above effects */
+    color: white; /* Adjust text color if necessary */
+  }
+
+/* Header Styling */
+.sticky-header {
+    position: fixed;
+    top: 0; /* Fix header at the top */
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: black;
+    padding: 20px 0;
+    font-size: 150%;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.image-container {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-container img {
+    max-width: 50%; /* Keep the same image width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: -800px; /* Keep the same bottom margin */
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.img-1 {
+    margin-top: 750px; /* Maintain the same margin */
+}
+
+.img-2 {
+    margin-top: 200px; /* Maintain the same margin */
+    width: 750px; /* Set fixed width */
+    height: auto; /* Keep aspect ratio */
+}
+
+.img-3 {
+    margin-top: 600px; /* Maintain the same margin */
+    width: 750px; /* Set fixed width */
+    height: auto; /* Keep aspect ratio */
+}
+
+/* Responsive adjustments for all mobile devices */
+@media (max-width: 768px) { /* For tablets and smaller screens */
+    .sticky-header {
+        padding: 10px 0; /* Reduce header padding */
+        font-size: 120%; /* Adjust font size for smaller screens */
+    }
+
+    .image-container {
+        width: 200px;
+        height: auto; /* Allow content-based height */
+        margin-top: 10px; /* Add space between the header and images */
+        display: flex;
+        flex-direction: column; /* Ensure images stack vertically */
+        align-items: center; /* Center align images */
+    }
+
+    .image-container img {
+        max-width: 90%; /* Scale images to fit the screen */
+        height: auto; /* Maintain aspect ratio */
+        margin: 15px 10; /* Add consistent spacing around images */
+        border-radius: 20px; /* Keep rounded corners for a consistent design */
+    }
+
+    .img-1 {
+        margin-top: 30px; /* Ensure the first image displays properly */
+    }
+
+    .img-2,
+    .img-3 {
+        margin-top: 15px; /* Reduce margin between subsequent images */
+    }
+}
+
+@media (max-width: 480px) { /* For smaller mobile devices */
+    .sticky-header {
+        padding: 5px 0; /* Further reduce padding */
+        font-size: 100%; /* Adjust header font size */
+    }
+
+    .image-container img {
+        max-width: 100%; /* Ensure images fill the screen properly */
+        margin: 10px 0; /* Reduce spacing for compact screens */
+    }
+
+    .img-1 {
+        margin-top: 20px; /* Ensure it's visible at the top */
+    }
+
+    .img-2,
+    .img-3 {
+        margin-top: 10px; /* Adjust spacing for tighter layouts */
+    }
+}
+
+h1{
+    color: purple;
+    font-weight: bolder;
+}

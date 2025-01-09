@@ -183,7 +183,26 @@ canvas {
 
 
 
+/* Specific styling for HAPPY BIRTHDAY */
+.glow-text:first-of-type {
+  white-space: normal; /* Allow wrapping for "HAPPY BIRTHDAY!" */
+  word-break: break-word;
+}
 
+/* Specific styling for MEHBOOB */
+.glow-text:last-of-type {
+  white-space: nowrap; /* Prevent wrapping for "MEHBOOB" */
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 600px) {
+  .glow-text:first-of-type {
+    font-size: 5rem; /* Adjust font size for smaller screens */
+  }
+  .glow-text:last-of-type {
+    font-size: 4rem; /* Adjust font size for "MEHBOOB" */
+  }
+}
 
 
 
